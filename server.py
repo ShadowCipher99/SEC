@@ -3,7 +3,8 @@ from cryptography.fernet import Fernet
 
 key = Fernet.generate_key()
 server_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-host = ""
+host = socket.gethostbyname(socket.gethostname()) # Получить IP адрес сервера
+print(host)
 port = 3000
 server_socket.bind((host, port))
 server_socket.listen(2)
