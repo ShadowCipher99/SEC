@@ -2,7 +2,7 @@ import socket
 from cryptography.fernet import Fernet
 
 client_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-host = "localhost"
+host = input("host:")
 port = 3000
 client_socket.connect((host, port))
 key = client_socket.recv(1024)
